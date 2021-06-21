@@ -7,6 +7,10 @@ describe("Converter", () => {
   });
 
   test("should return not a number if passed a string", () => {
-    expect(converter.getExactCoins("hello", "Not a number"));
+    expect(converter.getExactCoins("hello")).toBe("Not a number");
+  });
+
+  test("should return string number of quarters", () => {
+    expect(converter.getExactCoins(1)).toEqual("4");
   });
 });
